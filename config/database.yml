@@ -11,10 +11,10 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: notifier_development
+  database: notifier
   pool: 5
-  username: root
-  password:
+  username: max
+  password: j262
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -23,7 +23,7 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: notifier_test
+  database: notifier
   pool: 5
   username: root
   password:
@@ -32,7 +32,7 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: notifier_production
+  database: notifier
   pool: 5
   username: root
   password:
