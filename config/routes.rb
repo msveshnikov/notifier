@@ -1,4 +1,7 @@
 Notifier::Application.routes.draw do
+  resources :resources, except: [:new, :edit]
+  resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
