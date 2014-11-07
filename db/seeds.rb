@@ -8,3 +8,5 @@
 3.times do |i|
   User.create(name: "User ##{i}", email: "test@example.com")
 end
+
+Resource.create(url: "microsoft.com", user_id: 1, hash_content: 783473498)

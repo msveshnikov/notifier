@@ -23,10 +23,10 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: notifier
+  database: notifier-test
   pool: 5
   username: root
-  password:
+  password: j262
   host: localhost
 
 production:

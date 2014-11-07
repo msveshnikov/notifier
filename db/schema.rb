@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20141107083701) do
     t.integer  "hash_content"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer "user_id"
+    t.integer  "user_id"
   end
 
   create_table "users", force: true do |t|

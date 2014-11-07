@@ -5,7 +5,7 @@ class ResourcesController < ApplicationController
     #@resources = Resource.all
     #render json: @resources
 
-    @resource = Resource.new(resource_params.except(:user_id))
+    @resource = Resource.new(resource_params) #.except(:user_id))
     @resource.hash_content = 0
     @resource.last_updated = "2014/11/06"
     if @resource.save
