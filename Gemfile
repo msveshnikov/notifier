@@ -33,7 +33,7 @@ group :doc do
 end
 
 gem 'rails-api'
-
+gem 'warbler'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
