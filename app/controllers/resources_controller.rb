@@ -2,9 +2,17 @@ class ResourcesController < ApplicationController
   # GET /resources
   # GET /resources.json
   def index
-    @resources = Resource.all
+    #@resources = Resource.all
+    #render json: @resources
 
-    render json: @resources
+    @resource = Resource.new(resource_params.except(:user_id))
+    @resource.hash_content = 0
+    @resource.last_updated = "2014/11/06"
+    if @resource.save
+      render json: @resource, status: :created, location: @resource
+    else
+      render json: @resource.errors, status: :unprocessable_entity
+    end
   end
 
   # GET /resources/1
@@ -49,8 +57,8 @@ class ResourcesController < ApplicationController
   end
 
   private
-    
-    def resource_params
-      params.require(:resource).permit(:url, :last_updated, :hash_content)
-    end
+
+  def resource_params
+    params.permit(:url, :user_id)
+  end
 end
