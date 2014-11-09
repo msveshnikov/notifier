@@ -26,6 +26,8 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     arel (4.0.2)
+    bootstrap-sass (3.3.0.1)
+      sass (~> 3.2)
     builder (3.1.4)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -44,8 +46,6 @@ GEM
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jruby-jars (1.7.16.1)
-    jruby-rack (1.1.16)
     json (1.8.1)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
@@ -75,7 +75,6 @@ GEM
     rake (10.3.2)
     rdoc (4.1.2)
       json (~> 1.4)
-    rubyzip (1.1.6)
     sass (3.2.19)
     sass-rails (4.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -103,16 +102,12 @@ GEM
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    warbler (1.4.4)
-      jruby-jars (>= 1.5.6, < 2.0)
-      jruby-rack (>= 1.0.0)
-      rake (>= 0.9.6)
-      rubyzip (>= 0.9, < 1.2)
 
 PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  bootstrap-sass
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
@@ -123,4 +118,3 @@ DEPENDENCIES
   sdoc
   turbolinks
   uglifier (>= 1.3.0)
-  warbler

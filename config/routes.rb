@@ -1,4 +1,10 @@
 Notifier::Application.routes.draw do
+
+  root 'static_pages#home'
+  match '/users/new', to: 'users#new', via: 'post'
+  match '/signup', to: 'users#login', via: 'get'
+  match '/about', to: 'static_pages#about', via: 'get'
+
   resources :resources, except: [:new, :edit]
   resources :users
 

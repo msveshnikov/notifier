@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  def login
+  end
+
+
+
   # GET /users
   # GET /users.json
   def index
@@ -14,7 +19,17 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    user = User.find_by_google_id(params[:google_id])
+    if user
+      redirect_to root_url, notice: "You are already registered!"
+    else
+      @fullname = params[:fullname]
+      @email = params[:email]
+      @gplusId = params[:google_id]
+      u = User.new(name: params[:fullname], google_id: params[:google_id], email: params[:email])
+      u.save
+      redirect_to root_url, notice: "User with name #{@fullname} and Google+ ID #{@gplusId} has been successfully registered!"
+    end
   end
 
   # GET /users/1/edit

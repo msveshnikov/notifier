@@ -1,0 +1,63 @@
+<script type="text/javascript">
+
+    function signinCallback(authResult) {
+        var token = gapi.auth.getToken();
+        var accessToken = token.access_token;
+        if (authResult['access_token']) {
+            var accessUrl = 'https://www.googleapis.com/plus/v1/people/me?access_token=' + accessToken;
+            $.ajax({
+                type: 'GET',
+                url: accessUrl,
+                async: false,
+                contentType: 'application/json',
+                dataType: 'jsonp',
+                success: function (data) {
+                    var originalImage = data.image.url;
+                    var imageUrl = originalImage.slice(0, -2);
+                    var gplusImage = imageUrl + "200";
+                    $('#fullname').val(data.displayName);
+                    $('#email').val(data.email);
+                    $('#google_id').val(data.id);
+                    $('.is-this-you').html("<h3>Is this you?</h3><img src='" + gplusImage + "'><br><h4>" + data.displayName + "</h4><br><input type='submit' value='Login or Register'>");
+                },
+                error: function (e) {
+                    console.log(e);
+                }
+            });
+        } else if (authResult['error']) {
+            $('.is-this-you').html("<h4>Your request could not be completed at this time</h4>");
+        }
+    }
+
+    (function () {
+        var po = document.createElement('script');
+        po.type = 'text/javascript';
+        po.async = true;
+        po.src = 'https://apis.google.com/js/client:plusone.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+    })();
+
+
+</script>
+
+<span id="signinButton">
+    <span
+    class="g-signin"
+    data-callback="signinCallback"
+    data-clientid="561935625736-ju9i1nsfdr8b65dnodfa7ufsdof88kgv.apps.googleusercontent.com"
+    data-cookiepolicy="single_host_origin"
+    data-accesstype="offline"
+    data-scope="https://www.googleapis.com/auth/plus.login"
+    data-redirecturi="postmessage">
+    </span>
+  </span>
+
+<%= form_tag(:controller => "users", :action => "new", :method => "post") do %>
+    <%= hidden_field_tag :fullname %>
+    <%= hidden_field_tag :google_id %>
+    <%= hidden_field_tag :email %>
+    <%= button_tag "Press me" %>
+
+<% end %>
+
