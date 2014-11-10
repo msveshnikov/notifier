@@ -1,11 +1,18 @@
 Notifier::Application.routes.draw do
 
   root 'static_pages#home'
+
   match '/users/new', to: 'users#new', via: 'post'
   match '/signup', to: 'users#login', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
 
-  resources :resources, except: [:new, :edit]
+  match '/resources', to: 'resources#index', via: 'get'
+  match '/resources/:user_id', to: 'resources#show', via: 'get'
+  match '/resources', to: 'resources#create', via: 'post'
+  match '/resources/:id', to: 'resources#destroy', via: 'delete'
+
+  #resources :resources, except: [:new, :edit]
+
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.

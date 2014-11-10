@@ -1,54 +1,32 @@
 class ResourcesController < ApplicationController
-  # GET /resources
-  # GET /resources.json
-  def index
-    #@resources = Resource.all
-    #render json: @resources
 
-    @resource = Resource.new(resource_params) #.except(:user_id))
-    @resource.hash_content = 0
-    @resource.last_updated = "2014/11/06"
-    if @resource.save
-      render json: @resource, status: :created, location: @resource
-    else
-      render json: @resource.errors, status: :unprocessable_entity
-    end
+  # GET /resources #ALL
+  def index
+    @resources = Resource.all
+    render json: @resources
   end
 
   # GET /resources/1
-  # GET /resources/1.json
   def show
-    @resource = Resource.find(params[:id])
-
+    @resource = Resource.find_by(user_id: params[:user_id])
     render json: @resource
   end
 
   # POST /resources
-  # POST /resources.json
   def create
-    @resource = Resource.new(resource_params)
-
+    @resource = Resource.new(resource_params) #.except(:user_id))
+    @resource.hash_content = 0
+    @resource.last_updated = "2014/11/06"
     if @resource.save
-      render json: @resource, status: :created, location: @resource
+      head :created
+      #render json: @resource, status: :created, location: @resource
     else
-      render json: @resource.errors, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /resources/1
-  # PATCH/PUT /resources/1.json
-  def update
-    @resource = Resource.find(params[:id])
-
-    if @resource.update(resource_params)
-      head :no_content
-    else
-      render json: @resource.errors, status: :unprocessable_entity
+      head :bad_request
+      #render json: @resource.errors, status: :unprocessable_entity
     end
   end
 
   # DELETE /resources/1
-  # DELETE /resources/1.json
   def destroy
     @resource = Resource.find(params[:id])
     @resource.destroy
