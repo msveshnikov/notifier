@@ -18,11 +18,11 @@ class ResourcesController < ApplicationController
     @resource.hash_content = 0
     @resource.last_updated = "2014/11/06"
     if @resource.save
-      head :created
-      #render json: @resource, status: :created, location: @resource
+      #head :created
+      render json: @resource, status: :created #, location: @resource
     else
-      head :bad_request
-      #render json: @resource.errors, status: :unprocessable_entity
+      #head :bad_request
+      render json: @resource.errors, status: :unprocessable_entity
     end
   end
 

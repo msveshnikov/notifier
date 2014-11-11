@@ -3,5 +3,6 @@ class StaticPagesController < ApplicationController
   end
 
   def about
+    flash.now[:alert] = "Your book was not found"
   end
 end
