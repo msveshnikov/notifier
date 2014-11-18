@@ -15,8 +15,10 @@ class ResourcesController < ApplicationController
   # POST /resources
   def create
     @resource = Resource.new(resource_params) #.except(:user_id))
+    clnt = HTTPClient.new
+    res = clnt.head(params[:url])
+    @resource.last_updated = res.header['Last-Modified'][0]
     @resource.hash_content = 0
-    @resource.last_updated = "2014/11/06"
     if @resource.save
       #head :created
       render json: @resource, status: :created #, location: @resource
