@@ -26,6 +26,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     arel (4.0.2)
+    bcrypt-ruby (3.1.2-x86-mingw32)
     bootstrap-sass (3.3.1.0)
       sass (~> 3.2)
     builder (3.1.4)
@@ -116,6 +117,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  bcrypt-ruby
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   httpclient
