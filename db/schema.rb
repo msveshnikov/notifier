@@ -16,18 +16,18 @@ ActiveRecord::Schema.define(version: 20141107083701) do
   create_table "resources", force: true do |t|
     t.string   "url"
     t.datetime "last_updated"
-    t.integer  "hash_content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "hash_content"
     t.integer  "user_id"
+
+    t.timestamps
   end
 
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "google_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+
+    t.timestamps
   end
 
 end

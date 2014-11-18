@@ -17,7 +17,9 @@ class ResourcesController < ApplicationController
     @resource = Resource.new(resource_params) #.except(:user_id))
     clnt = HTTPClient.new
     @resource.last_updated = clnt.head(params[:url]).header['Last-Modified'][0]
-    @resource.hash_content = clnt.get_content(params[:url]).hash
+    doc = Nokogiri::HTML(clnt.get_content(params[:url]))
+    @resource.hash_content = Digest::MD5.hexdigest(doc.xpath("//body").first)
+
     if @resource.save
       render json: @resource, status: :created
     else
