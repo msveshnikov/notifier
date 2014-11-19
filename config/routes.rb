@@ -6,14 +6,14 @@ Notifier::Application.routes.draw do
   match '/signup', to: 'users#login', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
 
-  match '/resources', to: 'resources#index', via: 'get'
-  match '/resources/:user_id', to: 'resources#show', via: 'get'
-  match '/resources', to: 'resources#create', via: 'post'
-  match '/resources/:id', to: 'resources#destroy', via: 'delete'
+  match '/sites', to: 'sites#index', via: 'get'
+  match '/sites/:user_id', to: 'sites#show', via: 'get'
+  match '/sites', to: 'sites#create', via: 'post'
+  match '/sites/:id', to: 'sites#destroy', via: 'delete'
 
-  #resources :resources, except: [:new, :edit]
+  #resource :sites, except: [:new, :edit]
 
-  resources :users
+  resource :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -27,11 +27,11 @@ Notifier::Application.routes.draw do
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  # Example site route (maps HTTP verbs to controller actions automatically):
+  #   sites :products
 
-  # Example resource route with options:
-  #   resources :products do
+  # Example site route with options:
+  #   sites :products do
   #     member do
   #       get 'short'
   #       post 'toggle'
@@ -42,31 +42,31 @@ Notifier::Application.routes.draw do
   #     end
   #   end
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
+  # Example site route with sub-sites:
+  #   sites :products do
+  #     sites :comments, :sales
+  #     site :seller
   #   end
 
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
+  # Example site route with more complex sub-sites:
+  #   sites :products do
+  #     sites :comments
+  #     sites :sales do
   #       get 'recent', on: :collection
   #     end
   #   end
 
-  # Example resource route with concerns:
+  # Example site route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
   #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
+  #   sites :posts, concerns: :toggleable
+  #   sites :photos, concerns: :toggleable
 
-  # Example resource route within a namespace:
+  # Example site route within a namespace:
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
+  #     sites :products
   #   end
 end

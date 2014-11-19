@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20141107083701) do
 
-  create_table "resources", force: true do |t|
+  create_table "sites", force: true do |t|
     t.string   "url"
     t.datetime "last_updated"
     t.string  "hash_content"

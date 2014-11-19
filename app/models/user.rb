@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-#  attr_accessible :google_id, :name, :email
+  has_many :sites
 
   validates :name, :presence => true
 #  validates :email, :presence => true

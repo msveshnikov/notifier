@@ -9,7 +9,7 @@
 #
  every 1.minutes do
 #   command "/usr/bin/some_great_command"
-   runner "Resource.check"
+   runner "Site.check"
 #   rake "some:great:rake:task"
  end
 #
