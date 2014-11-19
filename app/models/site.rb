@@ -15,5 +15,4 @@ class Site < ActiveRecord::Base
     end
     puts 'End hard work'
   end
-
 end
