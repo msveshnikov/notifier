@@ -10,6 +10,7 @@ class Site < ActiveRecord::Base
       puts site.last_updated
       if (site.last_updated != clnt.head(site.url).header['Last-Modified'][0]) || (site.hash_content != Digest::MD5.hexdigest(doc.xpath("//body").first))
         puts 'Change detected ', site.url
+        UserMailer.change_email(site.user, site).deliver
       end
     end
     puts 'End hard work'
