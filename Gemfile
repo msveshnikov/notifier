@@ -7,7 +7,7 @@ gem 'rails', '4.0.2'
 gem 'mysql2'
 
 # Use SCSS for stylesheets
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '2.3.2.0'
 gem 'sass-rails', '~> 4.0.2'
 gem 'httpclient'
 gem 'bcrypt-ruby'
@@ -34,12 +34,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
-
-gem 'rails-api'
+#gem 'rails-api'
 
 
 #gem 'warbler'

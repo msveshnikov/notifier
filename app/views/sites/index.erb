@@ -1,0 +1,22 @@
+<h1>Watched resource list</h1>
+
+<ul class="sites">
+  <%= render @sites %>
+</ul>
+
+<div class="row">
+  <div class="span6 offset2">
+    <%= form_for :site do |f| %>
+
+        <%= f.label :url %>
+        <%= f.text_field :url %>
+
+        <%= f.hidden_field :user_id %>
+
+        <%= f.submit "Watch", class: "span3 offset9 btn btn-large" %>
+    <% end %>
+
+  </div>
+</div>
+
+<%= link_to "Sign up now!", signup_path, class: "offset3 btn btn-large btn-primary" %>

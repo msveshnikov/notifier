@@ -3,7 +3,7 @@ class SitesController < ApplicationController
   # GET /sites #ALL
   def index
     @sites = Site.all
-    render json: @sites
+    #render json: @sites
   end
 
   # GET /sites/1
@@ -16,12 +16,13 @@ class SitesController < ApplicationController
   def create
     @site = Site.new(site_params) #.except(:user_id))
     clnt = HTTPClient.new
-    @site.last_updated = clnt.head(params[:url]).header['Last-Modified'][0]
-    doc = Nokogiri::HTML(clnt.get_content(params[:url]))
+    @site.last_updated = clnt.head(params[:sites][:url]).header['Last-Modified'][0]
+    doc = Nokogiri::HTML(clnt.get_content(params[:sites][:url]))
     @site.hash_content = Digest::MD5.hexdigest(doc.xpath("//body").first)
 
     if @site.save
-      render json: @site, status: :created
+      #render json: @site, status: :created
+      redirect_to root_path
     else
       render json: @site.errors, status: :unprocessable_entity
     end
