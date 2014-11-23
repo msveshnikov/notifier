@@ -6,7 +6,7 @@
 
 <div class="row">
   <div class="span6 offset2">
-    <%= form_for :site do |f| %>
+    <%= form_for @site do |f| %>
 
         <%= f.label :url %>
         <%= f.text_field :url %>
@@ -19,4 +19,4 @@
   </div>
 </div>
 
-<%= link_to "Sign up now!", signup_path, class: "offset3 btn btn-large btn-primary" %>
+<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>

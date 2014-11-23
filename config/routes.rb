@@ -1,6 +1,6 @@
 Notifier::Application.routes.draw do
 
-  resource :users
+  resources :users
   root 'sites#index'
 
   #match '/users/new', to: 'users#new', via: 'post'
@@ -11,9 +11,7 @@ Notifier::Application.routes.draw do
   #match '/sites', to: 'sites#create', via: 'post'
   #match '/sites/:id', to: 'sites#destroy', via: 'delete'
 
-  resource :sites, except: [:new, :edit]
-
-  match '/users', to: 'users#index', via: 'get'
+  resources :sites, except: [:new, :edit]
 
 
 end

@@ -3,6 +3,7 @@ class SitesController < ApplicationController
   # GET /sites #ALL
   def index
     @sites = Site.all
+    @site = Site.new
     #render json: @sites
   end
 
@@ -14,10 +15,10 @@ class SitesController < ApplicationController
 
   # POST /sites
   def create
-    @site = Site.new(site_params) #.except(:user_id))
+    @site = Site.new(site_params[:site]) #.except(:user_id))
     clnt = HTTPClient.new
-    @site.last_updated = clnt.head(params[:sites][:url]).header['Last-Modified'][0]
-    doc = Nokogiri::HTML(clnt.get_content(params[:sites][:url]))
+    @site.last_updated = clnt.head(site_params[:site][:url]).header['Last-Modified'][0]
+    doc = Nokogiri::HTML(clnt.get_content(site_params[:site][:url]))
     @site.hash_content = Digest::MD5.hexdigest(doc.xpath("//body").first)
 
     if @site.save
@@ -39,6 +40,6 @@ class SitesController < ApplicationController
   private
 
   def site_params
-    params.permit(:url, :user_id)
+    params.permit(:url, :user_id, :id, :site)
   end
 end

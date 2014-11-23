@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Use mysql as the database for Active Record
-gem 'mysql2'
+#gem 'mysql2'
+gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '2.3.2.0'
