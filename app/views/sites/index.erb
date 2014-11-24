@@ -5,18 +5,18 @@
 </ul>
 
 <div class="row">
-  <div class="span6 offset2">
+  <div>
     <%= form_for @site do |f| %>
 
-        <%= f.label :url %>
-        <%= f.text_field :url %>
+        <%= f.label :url, class: "span1 offset1" %>
+        <%= f.text_field :url, class: "span6 offset2" %>
 
         <%= f.hidden_field :user_id %>
 
-        <%= f.submit "Watch", class: "span3 offset9 btn btn-large" %>
+        <%= f.submit "Watch", class: "span3 offset9 btn" %>
     <% end %>
 
   </div>
 </div>
 
-<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary offset3" %>

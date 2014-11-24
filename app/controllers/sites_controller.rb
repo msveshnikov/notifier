@@ -15,10 +15,13 @@ class SitesController < ApplicationController
 
   # POST /sites
   def create
-    @site = Site.new(site_params[:site]) #.except(:user_id))
+    @site = Site.new(site_params) #.except(:user_id))
     clnt = HTTPClient.new
-    @site.last_updated = clnt.head(site_params[:site][:url]).header['Last-Modified'][0]
-    doc = Nokogiri::HTML(clnt.get_content(site_params[:site][:url]))
+    url=params[:site][:url]
+    url="http://#{url}" unless url[0..3]==:http
+    @site.url=url
+    @site.last_updated = clnt.head(url).header['Last-Modified'][0]
+    doc = Nokogiri::HTML(clnt.get_content(url))
     @site.hash_content = Digest::MD5.hexdigest(doc.xpath("//body").first)
 
     if @site.save
@@ -34,12 +37,13 @@ class SitesController < ApplicationController
     @site = Site.find(params[:id])
     @site.destroy
 
-    head :no_content
+    redirect_to root_path
+#    head :no_content
   end
 
   private
 
   def site_params
-    params.permit(:url, :user_id, :id, :site)
+    params.require(:site).permit(:url, :user_id, :id)
   end
 end
