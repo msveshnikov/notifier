@@ -9,4 +9,4 @@
   User.create(name: "User ##{i}", email: "test@example.com")
 end
 
-Site.create(url: "microsoft.com", user_id: 1, hash_content: 783473498)
+Site.create(url: "http://microsoft.com", user_id: 1, hash_content: 783473498)

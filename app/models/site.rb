@@ -1,5 +1,5 @@
 class Site < ActiveRecord::Base
-  validates :user_id, :presence => true
+  #validates :user_id, :presence => true
   belongs_to :user
 
   def self.check
@@ -8,8 +8,11 @@ class Site < ActiveRecord::Base
       clnt = HTTPClient.new
       doc = Nokogiri::HTML(clnt.get_content(site.url))
       puts site.last_updated
-      if (site.last_updated != clnt.head(site.url).header['Last-Modified'][0]) || (site.hash_content != Digest::MD5.hexdigest(doc.xpath("//body").first))
+      newhash=Digest::MD5.hexdigest(doc.xpath("//body").first)
+      if (site.last_updated != clnt.head(site.url).header['Last-Modified'][0]) || (site.hash_content != newhash)
         puts 'Change detected ', site.url
+        site.hash_content=newhash
+        site.save!
         UserMailer.change_email(site.user, site).deliver
       end
     end
