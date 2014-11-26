@@ -3,17 +3,15 @@
 <ul class="sites">
   <%= render @sites if @sites %>
 </ul>
-
+<br><br>
 <div class="row">
   <div>
-    <%= if current_user
-          form_for @site do |f| %>
-
-        <%= f.label :url, class: "span1 offset1" %>
-        <%= f.text_field :url, class: "span6 offset2" %>
-
-        <%= f.submit "Watch", class: "span3 offset9 btn-primary btn" %>
-    <% end
+    <%=if current_user
+        form_for @site do |f| %>
+         &nbsp;&nbsp;&nbsp;URL:
+         <%= f.text_field :url, class: "span6 offset2" %>
+         <%= f.submit "Watch", class: "span3 offset9 btn-primary btn" %>
+     <% end
        end %>
 
   </div>
