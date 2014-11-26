@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Google Auth Example App</title>
+  <title>Site notifier</title>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -13,7 +13,7 @@
       Signed in as <strong><%= current_user.name %></strong>!
       <%= link_to "Sign out", signout_path, id: "sign_out" %>
   <% else %>
-      <%= link_to image_tag("signin.png"), "/auth/google_oauth2", id: "sign_in", class: "login" %>
+      <%= link_to image_tag("signin.png", width: 150), "/auth/google_oauth2", id: "sign_in", class: "login" %>
   <% end %>
 </div>
 <div>
