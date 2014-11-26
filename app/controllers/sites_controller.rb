@@ -13,15 +13,13 @@ class SitesController < ApplicationController
     url = "http://#{url}" unless url[0..3]==:http
     @site.url = url
     begin
-      clnt = HTTPClient.new
-      @site.last_updated = clnt.head(url).header['Last-Modified'][0]
-      doc = Nokogiri::HTML(clnt.get_content(url))
-      @site.hash_content = Digest::MD5.hexdigest(doc.xpath("//body").first)
-      ## TODO: exclude banners
+      @site.hash_content = hash_from_url(url)
+      #@site.last_updated = clnt.head(url).header['Last-Modified'][0]
       @site.save!
     rescue
       flash[:error] = "Wrong URL!"
     end
+    #File.write('c:\site.txt', text)
     redirect_to root_path
   end
 
@@ -31,4 +29,11 @@ class SitesController < ApplicationController
     redirect_to root_path
   end
 
+  def self.hash_from_url(url)
+    clnt = HTTPClient.new
+    doc = Nokogiri::HTML(clnt.get_content(url))
+    doc.css('script, link').each { |node| node.remove }
+    text = doc.css('body').text
+    Digest::MD5.hexdigest(text)
+  end
 end
