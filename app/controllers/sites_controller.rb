@@ -17,6 +17,7 @@ class SitesController < ApplicationController
       @site.last_updated = clnt.head(url).header['Last-Modified'][0]
       doc = Nokogiri::HTML(clnt.get_content(url))
       @site.hash_content = Digest::MD5.hexdigest(doc.xpath("//body").first)
+      ## TODO: exclude banners
       @site.save!
     rescue
       flash[:error] = "Wrong URL!"

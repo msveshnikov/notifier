@@ -1,5 +1,7 @@
 <h1>Watched resource list</h1>
 
+<!--TODO: resource groups-->
+
 <ul class="sites">
   <%= render @sites if @sites %>
 </ul>
@@ -11,7 +13,7 @@
 <div class="row">
   <div>
     <%= if current_user
-          form_for @site do |f| %>
+          form_for @site, html: {class: "form-inline"} do |f| %>
             &nbsp;&nbsp;&nbsp;URL:
             <%= f.text_field :url, class: "span6 offset2" %>
             <%= f.submit "Watch", class: "span3 offset9 btn-primary btn" %>
