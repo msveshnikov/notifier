@@ -10,16 +10,14 @@ class SitesController < ApplicationController
   def create
     @site = current_user.sites.build
     url = params[:site][:url]
-    url = "http://#{url}" unless url[0..3]==:http
+    url = "http://#{url}" unless url[0..3]=="http"
     @site.url = url
     begin
-      @site.hash_content = SitesController.hash_from_url(url)
-      #@site.last_updated = clnt.head(url).header['Last-Modified'][0]
+      @site.hash_content = @site.hash_from_url(url)
       @site.save!
     rescue
       flash[:error] = "Wrong URL!"
     end
-    #File.write('c:\site.txt', text)
     redirect_to root_path
   end
 
@@ -29,11 +27,4 @@ class SitesController < ApplicationController
     redirect_to root_path
   end
 
-  def self.hash_from_url(url)
-    clnt = HTTPClient.new
-    doc = Nokogiri::HTML(clnt.get_content(url))
-    doc.css('script, link').each { |node| node.remove }
-    text = doc.css('body').text
-    Digest::MD5.hexdigest(text)
-  end
 end
