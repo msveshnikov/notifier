@@ -13,7 +13,7 @@ class SitesController < ApplicationController
     url = "http://#{url}" unless url[0..3]==:http
     @site.url = url
     begin
-      @site.hash_content = hash_from_url(url)
+      @site.hash_content = SitesController.hash_from_url(url)
       #@site.last_updated = clnt.head(url).header['Last-Modified'][0]
       @site.save!
     rescue

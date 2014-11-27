@@ -9,7 +9,7 @@
 #
  every 5.minutes do
 #   command "/usr/bin/some_great_command"
-   runner "Site.check"
+   runner "Site.check", environment => "development"
 #   rake "some:great:rake:task"
  end
 #
