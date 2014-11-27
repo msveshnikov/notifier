@@ -2,26 +2,24 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
-gem 'omniauth-google-oauth2', '~> 0.2.1'
+gem 'omniauth-google-oauth2'
 
 # Use mysql as the database for Active Record
 #gem 'mysql2'
 gem 'sqlite3'
 
 # Use SCSS for stylesheets
-gem 'bootstrap-sass', '2.3.2.0'
-gem 'sass-rails', '~> 4.0.2'
+gem 'bootstrap-sass'
+gem 'sass-rails'
 gem 'httpclient'
-gem 'bcrypt-ruby'
+gem 'bcrypt'
 gem 'nokogiri'
 
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-
+gem 'uglifier'
 gem 'whenever', :require => false
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -30,7 +28,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder'
 
 #gem 'rails-api'
 
