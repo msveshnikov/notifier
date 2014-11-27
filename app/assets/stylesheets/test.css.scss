@@ -2,6 +2,22 @@
 
 /* mixins, variables, etc. */
 
+#my-div {
+  float: left;
+  background-color: #f00;
+  width: 20px;
+  height: 20px;
+  margin: 3px;
+}
+
+a.fill-div {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+
+
 $grayMediumLight: #eaeaea;
 
 @mixin box_sizing {
@@ -54,7 +70,6 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
 }
 
 p {

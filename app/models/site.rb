@@ -1,6 +1,7 @@
 class Site < ActiveRecord::Base
   validates :user_id, :presence => true
   belongs_to :user
+  belongs_to :category
 
   def self.check
     puts 'Doing hard work'

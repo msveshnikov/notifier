@@ -9,7 +9,7 @@ gem 'omniauth-google-oauth2'
 gem 'sqlite3'
 
 # Use SCSS for stylesheets
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '2.3.2.0'
 gem 'sass-rails'
 gem 'httpclient'
 gem 'bcrypt'

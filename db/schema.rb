@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125103127) do
+ActiveRecord::Schema.define(version: 20141127154644) do
+
+  create_table "categories", force: true do |t|
+    t.string "name"
+    t.string "color"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sites", force: true do |t|
     t.string   "url"
@@ -20,7 +27,10 @@ ActiveRecord::Schema.define(version: 20141125103127) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer "category_id"
   end
+
+  add_index "sites", ["category_id"], name: "index_sites_on_category_id"
 
   create_table "users", force: true do |t|
     t.string   "provider"
