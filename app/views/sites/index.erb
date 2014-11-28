@@ -1,10 +1,13 @@
 <h1>Watched resource list</h1>
 
 <!--TODO: resource groups-->
-
+<%= render @categories %>
+<hr>
 <ul class="sites">
-  <%= render @sites if @sites %>
+  <%= render @sites.where(category_id: nil) %>
 </ul>
+
+
 <br>
 <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>

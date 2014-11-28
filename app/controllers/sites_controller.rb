@@ -3,6 +3,7 @@ class SitesController < ApplicationController
   # GET /sites #ALL
   def index
     @sites = Site.where(user_id: current_user)
+    @categories=Category.select { |cat| cat.sites.where(user_id: current_user).size > 0 }
     @site = Site.new
   end
 

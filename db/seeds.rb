@@ -11,8 +11,8 @@
 
 #Site.create(url: "http://microsoft.com", user_id: 1, hash_content: 783473498)
 
-Category.create(name: "Entertainment", color: "#BE1E4E")
-Category.create(name: "Business", color: "#184DC1")
+Category.create(name: "Entertainment", color: "#CE4E8E")
+Category.create(name: "Business", color: "#589DD1")
 Category.create(name: "Sport", color: "#7CFC00")
 Category.create(name: "Music", color: "#FA3E32")
-Category.create(name: "Video", color: "#932667")
+Category.create(name: "Video", color: "#E1D859")

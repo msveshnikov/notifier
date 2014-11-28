@@ -1,0 +1,6 @@
+<hr>
+<div style="background-color: <%= category.color %>">
+  <h2> <%= category.name %> </h2></div>
+<ul class="sites">
+  <%= render @sites.where(category_id: category.id) %>
+</ul>
