@@ -27,4 +27,14 @@ class SitesController < ApplicationController
     redirect_to root_path
   end
 
+  def update
+    @site=Site.find(params[:id]).update_attributes(site_params)
+    redirect_to root_path
+  end
+
+  private
+
+  def site_params
+    params.permit(:category_id)
+  end
 end
