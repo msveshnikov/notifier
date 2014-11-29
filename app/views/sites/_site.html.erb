@@ -1,5 +1,5 @@
 <li>
-  <%= link_to site.url, site.url %>
+  <%= link_to site.url, site.url, class: site.was_changed ? "changed" : "" %>
   | <%= link_to "delete", site, method: :delete, data: {confirm: "You sure?"} %>
   <div id="container" style="overflow:hidden;width:500px">
     <div id="inner" style="overflow:hidden;width: 500px">

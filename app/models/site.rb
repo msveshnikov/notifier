@@ -9,7 +9,8 @@ class Site < ActiveRecord::Base
       newhash=site.hash
       if site.hash_content != newhash
         puts 'Change detected ', site.url
-        site.hash_content=newhash
+        site.hash_content = newhash
+        site.was_changed = true
         site.save!
         UserMailer.change_email(site.user, site).deliver
       end
