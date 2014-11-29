@@ -1,6 +1,25 @@
 <h1>Editing category</h1>
 
-<%= render 'form' %>
+<script type="text/javascript">
+    $(document).ready(
+            function () {
+                $('#Binded').jPicker();
+            });
+</script>
+
+<%= form_for(@category) do |f| %>
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :color %><br>
+      <%= f.text_field :color, id: "Binded" %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
 
 <%= link_to 'Back', categories_path %> |
 <%= link_to 'Home', root_path %>

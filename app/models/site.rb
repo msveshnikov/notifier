@@ -7,7 +7,7 @@ class Site < ActiveRecord::Base
     puts 'Doing hard work'
     Site.all.each do |site|
       newhash=site.hash
-      if (site.hash_content != newhash)
+      if site.hash_content != newhash
         puts 'Change detected ', site.url
         site.hash_content=newhash
         site.save!

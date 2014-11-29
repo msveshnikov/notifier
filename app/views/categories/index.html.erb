@@ -10,7 +10,7 @@
 
   <tbody>
   <% @categories.each do |category| %>
-      <tr>
+      <tr style="background-color: <%= category.color %>">
         <td><%= category.name %></td>
         <td><%= category.color %></td>
         <td><%= link_to 'Edit', edit_category_path(category) %></td>
