@@ -36,6 +36,6 @@ class SitesController < ApplicationController
   private
 
   def site_params
-    params.permit(:category_id)
+    params.permit(:category_id, :was_changed)
   end
 end

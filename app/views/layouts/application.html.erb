@@ -10,7 +10,7 @@
 <div>
   <% if current_user %>
       <img src="<%= current_user.image %>" height="42" width="42">
-      Signed in as <strong><%= current_user.name %></strong>!
+      Welcome, <strong><%= current_user.name %></strong>!
       <%= link_to "Sign out", signout_path, id: "sign_out" %>
   <% else %>
       <%= link_to image_tag("signin.png", width: 150), "/auth/google_oauth2", id: "sign_in" %>
