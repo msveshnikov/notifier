@@ -15,10 +15,9 @@ class Site < ActiveRecord::Base
         site.save!
         File.write('tmp/old', oldcontent)
         File.write('tmp/new', site.content)
-        #system 'diff tmp/old tmp/new >tmp/diff'
-        diff=File.read('tmp/diff')
-        diff.gsub! "\n", "<br>"
-        UserMailer.change_email(site, diff).deliver
+        system 'diff tmp/old tmp/new >tmp/diff'
+        @diff=File.read('tmp/diff')
+        UserMailer.change_email(site, @diff).deliver
       end
     end
     puts 'End hard work'

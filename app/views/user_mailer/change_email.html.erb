@@ -3,11 +3,11 @@
 <head>
   <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
   <style type="text/css">
-      m1 {
+      h3 {
           color: #f00;
       }
 
-      m2 {
+      h4 {
           color: #00f
       }
   </style>
@@ -20,9 +20,7 @@
   your username is: <%= @user.name %>.<br>
 </p>
 
-DIFF:
-<m1> RED TEST</m1>
-<m2> BLUE TEST</m2>
+<h2>DIFF:</h2><br>
 <%= @diff.html_safe %>
 
 <p>Thanks for using site notifier!</p>

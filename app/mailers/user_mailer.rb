@@ -4,7 +4,10 @@ class UserMailer < ActionMailer::Base
   def change_email(site, diff)
     @site = site
     @user = site.user
-    @diff = sanitize_utf8(diff)
+    diff_a = diff.split("\n")
+    diff_a.each { |s| colorize s }
+    @diff = diff_a.join("<br>")
+    @diff = sanitize_utf8(@diff)
     mail(to: @user.email, subject: 'Change notification')
   end
 
@@ -14,4 +17,8 @@ class UserMailer < ActionMailer::Base
     string.chars.select { |c| c.valid_encoding? }.join
   end
 
+  def colorize(s)
+    s.replace "<h3>"+s+"</h3>" if s[0]==">"
+    s.replace "<h4>"+s+"</h4>" if s[0]=="<"
+  end
 end
