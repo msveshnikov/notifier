@@ -2,6 +2,15 @@
 <html>
 <head>
   <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+  <style type="text/css">
+      m1 {
+          color: #f00;
+      }
+
+      m2 {
+          color: #00f
+      }
+  </style>
 </head>
 <body>
 <h1>Your site has changed!</h1>
@@ -10,6 +19,11 @@
   Your watched site <%= @site.url %> has been changed,
   your username is: <%= @user.name %>.<br>
 </p>
+
+DIFF:
+<m1> RED TEST</m1>
+<m2> BLUE TEST</m2>
+<%= @diff.html_safe %>
 
 <p>Thanks for using site notifier!</p>
 

@@ -14,6 +14,7 @@ gem 'sass-rails'
 gem 'httpclient'
 gem 'bcrypt'
 gem 'nokogiri'
+gem 'premailer'
 
 gem 'uglifier'
 gem 'whenever', :require => false

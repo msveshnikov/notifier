@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141129072551) do
+ActiveRecord::Schema.define(version: 20141129093818) do
 
   create_table "categories", force: true do |t|
     t.string "name"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20141129072551) do
     t.datetime "updated_at"
     t.integer "category_id"
     t.boolean "was_changed"
+    t.text "content"
   end
 
   add_index "sites", ["category_id"], name: "index_sites_on_category_id"
