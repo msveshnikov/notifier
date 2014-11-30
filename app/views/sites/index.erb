@@ -1,12 +1,10 @@
 <h1>Your watched resource list</h1>
 
-<!--TODO: resource groups-->
 <%= render @categories %>
 <hr>
 <ul class="sites">
   <%= render @sites.where(category_id: nil) %>
 </ul>
-
 
 <br>
 <% flash.each do |key, value| %>

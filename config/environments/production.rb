@@ -77,4 +77,17 @@ Notifier::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.assets.compile = true
+  config.assets.precompile =  ['*.js', '*.css', '*.css.erb']
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address: 'smtp.gmail.com',
+      port: 587,
+      domain: 'example.com',
+      user_name: 'best.site.notifier@gmail.com',
+      password: '`1qazxsw2',
+      authentication: 'plain',
+      enable_starttls_auto: true}
 end
