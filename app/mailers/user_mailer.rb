@@ -8,6 +8,7 @@ class UserMailer < ActionMailer::Base
     diff_a.each { |s| colorize s }
     @diff = diff_a.join("<br>")
     @diff = sanitize_utf8(@diff)
+    diff.replace @diff
     #File.write('tmp/color', @diff)
     mail(to: @user.email, subject: 'Change notification')
   end

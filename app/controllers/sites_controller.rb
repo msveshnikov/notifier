@@ -32,6 +32,11 @@ class SitesController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @diff=Site.find(params[:id]).diff
+    render :show, layout: false
+  end
+
   private
 
   def site_params

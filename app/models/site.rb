@@ -11,13 +11,14 @@ class Site < ActiveRecord::Base
       site.calc_hash
       if site.hash_content != oldhash_content
         puts 'Change detected ', site.url, ' old hash ', oldhash_content, ' new hash ', site.hash_content
-        site.was_changed = true
-        site.save!
         File.write('tmp/old', oldcontent)
         File.write('tmp/new', site.content)
         system 'diff tmp/old tmp/new >tmp/diff'
         @diff=File.read('tmp/diff')
         UserMailer.change_email(site, @diff).deliver
+        site.diff = @diff
+        site.was_changed = true
+        site.save!
       end
     end
     puts 'End hard work'
