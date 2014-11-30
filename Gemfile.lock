@@ -4,6 +4,10 @@ GEM
     actionmailer (4.0.2)
       actionpack (= 4.0.2)
       mail (~> 2.5.4)
+    actionmailer_inline_css (1.5.3)
+      actionmailer (>= 3.0.0)
+      nokogiri (>= 1.4.4)
+      premailer (>= 1.7.1)
     actionpack (4.0.2)
       activesupport (= 4.0.2)
       builder (~> 3.1.0)
@@ -142,6 +146,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  actionmailer_inline_css
   bcrypt
   bootstrap-sass (= 2.3.2.0)
   coffee-rails
@@ -150,7 +155,6 @@ DEPENDENCIES
   jquery-rails
   nokogiri
   omniauth-google-oauth2
-  premailer
   rails (= 4.0.2)
   sass-rails
   sqlite3

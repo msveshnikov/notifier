@@ -14,7 +14,8 @@ gem 'sass-rails'
 gem 'httpclient'
 gem 'bcrypt'
 gem 'nokogiri'
-gem 'premailer'
+#gem 'premailer-rails'
+gem "actionmailer_inline_css"
 
 gem 'uglifier'
 gem 'whenever', :require => false

@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "testing.penton@gmail.com"
+  default from: "\"Site Notifier\" <best.site.notifier@gmail.com>"
 
   def change_email(site, diff)
     @site = site
@@ -8,6 +8,7 @@ class UserMailer < ActionMailer::Base
     diff_a.each { |s| colorize s }
     @diff = diff_a.join("<br>")
     @diff = sanitize_utf8(@diff)
+    #File.write('tmp/color', @diff)
     mail(to: @user.email, subject: 'Change notification')
   end
 
@@ -18,7 +19,13 @@ class UserMailer < ActionMailer::Base
   end
 
   def colorize(s)
-    s.replace "<h3>"+s+"</h3>" if s[0]==">"
-    s.replace "<h4>"+s+"</h4>" if s[0]=="<"
+    if s[0]=='<'
+      s.replace ' <h4> '+s[1..80]+' </h4> '
+    else
+      if s[0]=='>'
+        s.replace ' <h3> '+s[1..80]+' </h3> '
+      end
+    end
   end
+
 end

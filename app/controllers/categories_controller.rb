@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
   # PATCH/PUT /categories/1
   def update
     if @category.update(category_params)
-      @category.color='#'+@category.color
+      @category.color='#'+@category.color if @category.color[0]!='#'
       @category.save!
       redirect_to categories_path
     else

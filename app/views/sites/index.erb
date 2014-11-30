@@ -25,4 +25,4 @@
   </div>
 </div>
 
-<%= link_to 'Categories', categories_path %>
+<%= link_to 'Categories', categories_path if current_user && current_user.id==1 %>

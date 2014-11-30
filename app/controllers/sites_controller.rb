@@ -14,8 +14,7 @@ class SitesController < ApplicationController
     url = "http://#{url}" unless url[0..3]=="http"
     @site.url = url
     begin
-      @site.hash_content = @site.hash
-      @site.save!
+      @site.calc_hash
     rescue
       flash[:error] = "Wrong URL!"
     end

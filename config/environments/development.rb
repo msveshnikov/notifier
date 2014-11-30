@@ -21,8 +21,8 @@ Notifier::Application.configure do
       address: 'smtp.gmail.com',
       port: 587,
       domain: 'example.com',
-      user_name: 'testing.penton@gmail.com',
-      password: 'NnH8MuOn',
+      user_name: 'best.site.notifier@gmail.com',
+      password: '`1qazxsw2',
       authentication: 'plain',
       enable_starttls_auto: true}
 
