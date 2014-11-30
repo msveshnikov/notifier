@@ -1,10 +1,9 @@
 @import "bootstrap";
 
-.inputbox{
-  border: 1px solid #666;
-  width: 240px;
-  height: 35px;
-  font-size: 2em;
+.form-inline{
+  font-family: 'Courgette', serif;
+  //  font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+  font-size: 14px;
 }
 
 /* mixins, variables, etc. */

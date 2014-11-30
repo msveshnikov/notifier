@@ -1,4 +1,5 @@
 class SitesController < ApplicationController
+  before_action :set_site, only: [:show, :destroy, :update]
 
   # GET /sites #ALL
   def index
@@ -23,21 +24,25 @@ class SitesController < ApplicationController
 
   # DELETE /sites/1
   def destroy
-    Site.find(params[:id]).destroy
+    @site.destroy
     redirect_to root_path
   end
 
   def update
-    @site=Site.find(params[:id]).update_attributes(site_params)
+    @site.update_attributes(site_params)
     redirect_to root_path
   end
 
   def show
-    @diff=Site.find(params[:id]).diff
+    @site.update_attributes(site_params)
     render :show, layout: false
   end
 
   private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_site
+    @site = Site.find(params[:id])
+  end
 
   def site_params
     params.permit(:category_id, :was_changed)
