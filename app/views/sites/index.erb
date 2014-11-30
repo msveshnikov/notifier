@@ -18,8 +18,8 @@
     <%= if current_user
           form_for @site, html: {class: "form-inline"} do |f| %>
             &nbsp;&nbsp;&nbsp;URL:
-            <%= f.text_field :url, class: "span6 offset2" %>
-            <%= f.submit "Watch", class: "span2 offset9 btn-info btn" %>
+            <%= f.text_field :url, type: "search", class: "inputbox span6 offset2" %>
+            <%= f.submit "Watch", class: "span2 offset9 btn-primary btn" %>
         <% end
            end %>
   </div>

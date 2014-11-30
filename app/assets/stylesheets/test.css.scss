@@ -1,5 +1,12 @@
 @import "bootstrap";
 
+.inputbox{
+  border: 1px solid #666;
+  width: 240px;
+  height: 35px;
+  font-size: 2em;
+}
+
 /* mixins, variables, etc. */
 
 #my-div {
@@ -80,8 +87,8 @@ p {
 // login and history styles
 
 body {
-  font-family: monospace;
-  font-size: 16px;
+  font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+  font-size: 14px;
   margin: 1em;
 }
 
