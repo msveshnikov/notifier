@@ -4,9 +4,9 @@ class UserMailer < ActionMailer::Base
   def change_email(site, diff)
     @site = site
     @user = site.user
-    diff_a = diff.split("\n")
+    diff_a = diff.split("\n")-["---"]
     diff_a.each { |s| colorize s }
-    @diff = diff_a.join("<br>")
+    @diff = diff_a.join
     @diff = sanitize_utf8(@diff)
     diff.replace @diff
     #File.write('tmp/color', @diff)
