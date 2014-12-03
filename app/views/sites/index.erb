@@ -15,12 +15,14 @@
   <div>
     <%= if current_user
           form_for @site, html: {class: "form-inline"} do |f| %>
-            &nbsp;&nbsp;&nbsp;Enter your URL:
-            <%= f.text_field :url, type: "search", class: "span6 offset2" %>
-            <%= f.submit "Watch", class: "span2 offset9 btn-primary btn" %>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter URL:
+            <%= f.text_field :url, type: "search", class: "span5 offset2" %>
+            <%= f.submit "Watch", class: "span2 offset7 btn-primary btn" %>
         <% end
            end %>
   </div>
 </div>
 
 <%= link_to 'Categories', categories_path if current_user && current_user.id==1 %>
+
+

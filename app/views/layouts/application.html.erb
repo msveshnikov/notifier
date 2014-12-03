@@ -8,18 +8,38 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div>
-  <% if current_user %>
-      <img src="<%= current_user.image %>" height="42" width="42">
-      Welcome, <strong><%= current_user.name %></strong>!
-      <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
-      Please sign in to Google+ <br>
-      <%= link_to image_tag("signin.png", width: 150), "/auth/google_oauth2", id: "sign_in" %>
-  <% end %>
+
+<div class="row">
+  <aside class="span8">
+    <section>
+      <div>
+        <% if current_user %>
+            <img src="<%= current_user.image %>" height="42" width="42">
+            Welcome, <strong><%= current_user.name %></strong>!
+            <%= link_to "Sign out", signout_path, id: "sign_out" %>
+        <% else %>
+            Please sign in to Google+ <br>
+            <%= link_to image_tag("signin.png", width: 150), "/auth/google_oauth2", id: "sign_in" %>
+        <% end %>
+      </div>
+      <div>
+        <%= yield %>
+      </div>
+    </section>
+  </aside>
+  <div class="span4">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- my -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:300px;height:600px"
+         data-ad-client="ca-pub-1351673544337847"
+         data-ad-slot="2591225138"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
 </div>
-<div>
-  <%= yield %>
-</div>
+
+
 </body>
 </html>

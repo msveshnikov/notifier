@@ -14,8 +14,7 @@ gem 'sass-rails'
 gem 'httpclient'
 gem 'bcrypt'
 gem 'nokogiri'
-#gem 'premailer-rails'
-gem "actionmailer_inline_css"
+gem 'actionmailer_inline_css'
 gem 'colorbox-rails'
 
 gem 'uglifier'
