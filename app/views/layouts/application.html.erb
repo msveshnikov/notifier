@@ -2,7 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Courgette">
-  <title>Site Notifier</title>
+  <title>iWatcher <%= current_user.name if current_user %></title>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -16,6 +16,9 @@
   </script>
 </head>
 <body>
+
+<%= image_tag("topbar.png") %>
+<br><br><br>
 
 <div class="row">
   <aside class="span8">
