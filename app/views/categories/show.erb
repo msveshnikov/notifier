@@ -3,10 +3,9 @@
 <table>
   <tbody>
   <% @categories.each do |category| %>
-      <tr style="background-color: <%= category.color %>">
-        <td><%= image_tag(category.picture) %></td>
-        <td><%= category.name %></td>
-        <!--<td><%= link_to 'Edit', edit_category_path(category) %></td>-->
+      <tr>
+        <td><%= link_to image_tag(category.picture), site_path(@site, category_id: category.id), method: :put %></td>
+        <td><br><br><%= link_to category.name, site_path(@site, category_id: category.id), method: :put %></td>
       </tr>
   <% end %>
   </tbody>

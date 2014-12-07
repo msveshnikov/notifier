@@ -1,6 +1,6 @@
 @import "bootstrap";
 
-.form-inline{
+.form-inline {
   font-family: 'Courgette', serif;
   //  font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
   font-size: 14px;
@@ -24,7 +24,7 @@ a.fill-div {
   font-size: 10px;
 }
 
-$grayMediumLight: #eaeaea;
+//$grayMediumLight: #eaeaea;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -35,7 +35,7 @@ $grayMediumLight: #eaeaea;
 /* universal */
 
 html {
-  overflow-y: scroll;
+  //  overflow-y: scroll;
 }
 
 body {
@@ -119,4 +119,24 @@ body {
   text-decoration: none;
   font-weight: 700;
   width: 20em;
+}
+
+table tr td a {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
+table tr td {
+  padding-left: 0;
+  padding-right: 0;
+  border: 0;
+  text-align: center;
+  font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+  font-size: 2em;
+  color: red;
+}
+
+#cboxContent {
+  background: #000;
 }
