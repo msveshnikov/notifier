@@ -33,3 +33,8 @@ gem 'turbolinks'
 gem 'jbuilder'
 
 
+
+group :development do
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
+end
