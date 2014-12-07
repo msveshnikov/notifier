@@ -21,6 +21,12 @@ class CategoriesController < ApplicationController
     end
   end
 
+  #pickup list of categories
+  def show
+    @categories = Category.all
+    render :show, layout: false
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_category

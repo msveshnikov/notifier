@@ -1,6 +1,3 @@
-# config valid only for Capistrano 3.1
-#lock '3.2.1'
-
 set :application, 'iwatcher.tk'
 set :repo_url, 'https://github.com/msveshnikov/notifier.git'
 
@@ -11,18 +8,6 @@ set :bundle_flags, '--quiet'   # '--deployment --quiet' is the default
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/home/ubuntu/iwatcher'
-
-# Default value for :scm is :git
-# set :scm, :git
-
-# Default value for :format is :pretty
-# set :format, :pretty
-
-# Default value for :log_level is :debug
-# set :log_level, :debug
-
-# Default value for :pty is false
-# set :pty, true
 
 # Default value for :linked_files is []
 set :linked_files, %w{db/production.sqlite3}

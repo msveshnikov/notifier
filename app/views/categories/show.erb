@@ -1,0 +1,14 @@
+<h1>Select category</h1>
+
+<table>
+  <tbody>
+  <% @categories.each do |category| %>
+      <tr style="background-color: <%= category.color %>">
+        <td><%= image_tag(category.picture) %></td>
+        <td><%= category.name %></td>
+        <!--<td><%= link_to 'Edit', edit_category_path(category) %></td>-->
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+

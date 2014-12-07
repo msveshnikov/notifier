@@ -1,11 +1,14 @@
 <li>
   <%= link_to site.url, site.url, target: "_blank" %>
-  | <%= link_to "delete", site, method: :delete, data: {confirm: "You sure?"} %>
+  | <%= link_to "Category", category_path(site), data: {:colorbox => true,
+                                                        :colorbox_height => '400px',
+                                                        :colorbox_width => '400px'} %>
+  | <%= link_to "Delete", site, method: :delete, data: {confirm: "You sure?"} %>
   <%= if site.was_changed
         link_to image_tag("new.jpg", size: "48"),
-                site_path(site, was_changed: false), :data => {:colorbox => true,
-                                                               :colorbox_height => '500px',
-                                                               :colorbox_width => '700px'}
+                site_path(site, was_changed: false), data: {:colorbox => true,
+                                                            :colorbox_height => '500px',
+                                                            :colorbox_width => '700px'}
       end %>
   <div id="container" style="overflow:hidden;width:500px">
     <div id="inner" style="overflow:hidden;width: 500px">

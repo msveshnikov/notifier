@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "\"Site Notifier\" <best.site.notifier@gmail.com>"
+  default from: "\"iWatcher\" <best.site.notifier@gmail.com>"
 
   def change_email(site, diff)
     @site = site
