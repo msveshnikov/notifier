@@ -1,6 +1,21 @@
-<div style="background-color: <%= category.color %>">
-  <h2> <%= category.name %> </h2></div>
-<ul class="sites">
-  <%= render @sites.where(category_id: category.id) %>
-</ul>
-<br>
+<table>
+  <!--<col width="130">-->
+  <!--<col width="530">-->
+  <tr>
+    <div style="background-color: <%= category.color %>">
+      <h2> <%= category.name %> </h2>
+    </div>
+  </tr>
+  <tr>
+    <td>
+      <%= image_tag(category.picture) %>
+    </td>
+    <td>
+      <ul class="sites">
+        <%= render @sites.where(category_id: category.id) %>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+

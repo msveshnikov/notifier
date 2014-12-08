@@ -10,14 +10,14 @@
                                                             :colorbox_height => '500px',
                                                             :colorbox_width => '700px'}
       end %>
-  <div id="container" style="overflow:hidden;width:500px">
-    <div id="inner" style="overflow:hidden;width: 500px">
-      <% Category.all.each do |cat| %>
-          <div id="my-div" title="<%= cat.name %>" style="background-color: <%= cat.color %>">
-            <%= link_to "", site_path(site, category_id: cat.id), class: "fill-div", method: :put %>
-          </div>
-          &nbsp
-      <% end %>
-    </div>
-  </div>
+  <!--<div id="container" style="overflow:hidden;width:500px">-->
+    <!--<div id="inner" style="overflow:hidden;width: 500px">-->
+      <!--<% Category.all.each do |cat| %>-->
+          <!--<div id="my-div" title="<%= cat.name %>" style="background-color: <%= cat.color %>">-->
+            <!--<%= link_to "", site_path(site, category_id: cat.id), class: "fill-div", method: :put %>-->
+          <!--</div>-->
+          <!--&nbsp-->
+      <!--<% end %>-->
+    <!--</div>-->
+  <!--</div>-->
 </li>

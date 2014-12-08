@@ -1,10 +1,5 @@
 @import "bootstrap";
 
-.form-inline {
-  font-family: 'Courgette', serif;
-  //  font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-  font-size: 14px;
-}
 
 /* mixins, variables, etc. */
 
@@ -23,8 +18,6 @@ a.fill-div {
   text-decoration: none;
   font-size: 10px;
 }
-
-//$grayMediumLight: #eaeaea;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -73,7 +66,7 @@ h1 {
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   text-align: center;
   font-weight: normal;
 }
@@ -121,21 +114,22 @@ body {
   width: 20em;
 }
 
-table tr td a {
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-}
-
-table tr td {
-  padding-left: 0;
-  padding-right: 0;
-  border: 0;
-  text-align: center;
-  font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-  font-size: 2em;
-  color: red;
-}
+//
+//table tr td a {
+  //  display: block;
+  //  height: 100%;
+  //  width: 100%;
+  ////  color: yellow;
+  //}
+  //
+  //table tr td {
+  //  padding-left: 0;
+  //  padding-right: 0;
+  //  border: 0;
+  ////  text-align: center;
+  ////  font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+  ////  font-size: 2em;
+  //}
 
 #cboxContent {
   background: #000;
