@@ -16,30 +16,24 @@
   </script>
 
   <style>
-      * {
-          margin: 0;
-          padding: 0;
-      }
-
       html {
-          background: url(assets/bg.png) no-repeat center center fixed;
+          background: url(assets/bg.jpg) no-repeat center center fixed;
           -webkit-background-size: cover;
           -moz-background-size: cover;
           -o-background-size: cover;
           background-size: cover;
       }
   </style>
-
 </head>
 <body>
 
-<%= image_tag("topbar.png") %>
-<br><br><br>
+<%= image_tag("topbar.jpg") %>
 
-<div class="row">
+<div>
   <aside class="span8">
     <section>
       <div>
+        <br>
         <% if current_user %>
             <img src="<%= current_user.image %>" height="42" width="42">
             Welcome, <strong><%= current_user.name %></strong>!
@@ -55,6 +49,7 @@
     </section>
   </aside>
   <div class="span4">
+    <br> <br>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- my -->
     <ins class="adsbygoogle"
