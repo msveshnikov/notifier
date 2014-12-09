@@ -14,11 +14,11 @@
 ActiveRecord::Schema.define(version: 20141207145142) do
 
   create_table "categories", force: true do |t|
-    t.string "name"
-    t.string "color"
+    t.string   "name"
+    t.string   "color"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string "picture"
+    t.string   "picture"
   end
 
   create_table "sites", force: true do |t|
@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(version: 20141207145142) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer "category_id"
-    t.boolean "was_changed"
-    t.text "content"
-    t.text "diff"
+    t.integer  "category_id"
+    t.boolean  "was_changed"
+    t.text     "content"
+    t.text     "diff"
   end
 
   add_index "sites", ["category_id"], name: "index_sites_on_category_id"
