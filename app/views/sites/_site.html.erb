@@ -5,7 +5,7 @@
                                                         :colorbox_width => '500px'} %>
   | <%= link_to "Delete", site, method: :delete, data: {confirm: "You sure?"} %>
   <%= if site.was_changed
-        link_to image_tag("new.jpg", size: "48"),
+        link_to image_tag("new.png", size: "48"),
                 site_path(site, was_changed: false), data: {:colorbox => true,
                                                             :colorbox_height => '500px',
                                                             :colorbox_width => '700px'}
