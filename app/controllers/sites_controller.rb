@@ -24,12 +24,12 @@ class SitesController < ApplicationController
 
   # DELETE /sites/1
   def destroy
-    @site.destroy
+    @site.destroy if current_user
     redirect_to root_path
   end
 
   def update
-    @site.update_attributes(site_params)
+    @site.update_attributes(site_params)  if current_user
     redirect_to root_path
   end
 
