@@ -1,13 +1,11 @@
 @import "bootstrap";
 
-
 h1, h2 {
   line-height: 1;
 }
 
 h1 {
   font-size: 2em;
-//  letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -30,30 +28,29 @@ body {
   //  font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
   font-size: 15px;
   font-weight: normal;
-  //  margin: 1em;
+  max-width: 950px;
 }
 
 table tr td a {
-  //    display: block;
   height: 100%;
   width: 100%;
   color: black;
 }
 
-//  table tr td {
-//    padding-left: 0;
-//    padding-right: 0;
-//    border: 0;
-//    text-align: center;
-//    font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-//    font-size: 1em;
-//  }
+.leftbar {
+  padding-left: 0px;
+  margin-left: 0px;
+}
+
+.pickup {
+  padding-left: 50px;
+  padding-right: 0;
+  border: 0;
+  text-align: center;
+  font-size: 1em;
+  color: #ffc616
+}
 
 #cboxContent {
   background: #000;
-}
-
-input[type="submit"]
-{
-  background:url(watch.png);
 }

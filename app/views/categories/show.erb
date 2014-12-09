@@ -1,11 +1,13 @@
-<h1>Select category</h1>
+<h1 style="color:white">Select category</h1>
 
 <table>
   <tbody>
   <% @categories.each do |category| %>
       <tr>
-        <td><%= link_to image_tag(category.picture, width: 80), site_path(@site, category_id: category.id), method: :put %></td>
-        <td><%= link_to category.name, site_path(@site, category_id: category.id), style: "color: red", method: :put %></td>
+        <td><%= link_to image_tag(category.picture, width: 80),
+                        site_path(@site, category_id: category.id), method: :put %></td>
+        <td><%= link_to category.name, site_path(@site, category_id: category.id),
+                        class: "pickup", method: :put %></td>
       </tr>
   <% end %>
   </tbody>

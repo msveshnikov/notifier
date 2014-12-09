@@ -2,7 +2,7 @@
   <%= link_to site.url, site.url, target: "_blank" %>
   | <%= link_to "Category", category_path(site), data: {:colorbox => true,
                                                         :colorbox_height => '550px',
-                                                        :colorbox_width => '500px'} %>
+                                                        :colorbox_width => '400px'} %>
   | <%= link_to "Delete", site, method: :delete, data: {confirm: "You sure?"} %>
   <%= if site.was_changed
         link_to image_tag("new.png", size: "48"),
@@ -10,14 +10,4 @@
                                                             :colorbox_height => '500px',
                                                             :colorbox_width => '700px'}
       end %>
-  <!--<div id="container" style="overflow:hidden;width:500px">-->
-    <!--<div id="inner" style="overflow:hidden;width: 500px">-->
-      <!--<% Category.all.each do |cat| %>-->
-          <!--<div id="my-div" title="<%= cat.name %>" style="background-color: <%= cat.color %>">-->
-            <!--<%= link_to "", site_path(site, category_id: cat.id), class: "fill-div", method: :put %>-->
-          <!--</div>-->
-          <!--&nbsp-->
-      <!--<% end %>-->
-    <!--</div>-->
-  <!--</div>-->
 </li>

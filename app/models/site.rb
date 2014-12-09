@@ -28,8 +28,8 @@ class Site < ActiveRecord::Base
     clnt = HTTPClient.new
     doc = Nokogiri::HTML(clnt.get_content(url))
     doc.css('script, link').each { |node| node.remove }
-    self.content = doc.css('body').text.gsub(/[0-9]/,"")
-    self.hash_content = Digest::MD5.hexdigest(self.content)
+    self.content = doc.css('body').text #diff with numbers, hash - without
+    self.hash_content = Digest::MD5.hexdigest(self.content.gsub(/[0-9]/,""))
     save!
   end
 end

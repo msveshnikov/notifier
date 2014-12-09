@@ -34,7 +34,7 @@ class SitesController < ApplicationController
   end
 
   def show
-    @site.update_attributes(site_params)
+    @site.update_attributes(site_params) if current_user
     render :show, layout: false
   end
 

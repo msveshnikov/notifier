@@ -30,13 +30,18 @@
 <%= image_tag("topbar.jpg") %>
 
 <div>
+  <!--<aside class="span2 leftbar">-->
+  <!--<section>-->
+  <!--<%= image_tag("leftbar.png") %>-->
+  <!--</section>-->
+  <!--</aside>-->
   <aside class="span8">
     <section>
       <div>
-        <br>
+        <br><br>
         <% if current_user %>
             <img src="<%= current_user.image %>" height="42" width="42">
-            Welcome, <strong><%= current_user.name %></strong>!
+            Welcome, <%= current_user.name %>!
             <%= link_to "Sign out", signout_path, id: "sign_out" %>
         <% else %>
             Please sign in to Google+ <br>
@@ -49,8 +54,8 @@
       </div>
     </section>
   </aside>
-  <div class="span4">
-    <br> <br>
+  <div class="span3">
+    <br> <br><br> <br>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- my -->
     <ins class="adsbygoogle"
