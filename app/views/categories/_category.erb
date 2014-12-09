@@ -1,6 +1,4 @@
 <table>
-  <!--<col width="130">-->
-  <!--<col width="530">-->
   <tr>
     <div style="background-color: <%= category.color %>">
       <h2> <%= category.name %> </h2>
@@ -8,7 +6,7 @@
   </tr>
   <tr>
     <td>
-      <%= image_tag(category.picture) %>
+      <%= image_tag(category.picture, width: 100) %>
     </td>
     <td>
       <ul class="sites">
