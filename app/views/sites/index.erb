@@ -16,8 +16,8 @@
     <%= if current_user
           form_for @site, html: {class: "form-inline"} do |f| %>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter URL:
-            <%= f.text_field :url, type: "search", class: "span5 offset2" %>
-            <%= f.submit "Watch", class: "span2 offset7 btn-primary btn" %>
+            <%= f.text_field :url, type: "search", class: "span4 offset2" %>
+            <%= image_submit_tag("watch.png") %>
         <% end
            end %>
   </div>

@@ -7,7 +7,7 @@ h1, h2 {
 
 h1 {
   font-size: 2em;
-  letter-spacing: -2px;
+//  letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -26,9 +26,10 @@ p {
 }
 
 body {
-  font-family: 'Courgette', serif;
+  font-family: 'Alfa Slab One', serif;
   //  font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
   font-size: 15px;
+  font-weight: normal;
   //  margin: 1em;
 }
 
@@ -50,4 +51,9 @@ table tr td a {
 
 #cboxContent {
   background: #000;
+}
+
+input[type="submit"]
+{
+  background:url(watch.png);
 }
