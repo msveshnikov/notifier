@@ -15,7 +15,7 @@ class Site < ActiveRecord::Base
         File.write('tmp/new', site.content)
         system 'diff tmp/old tmp/new >tmp/diff'
         @diff=File.read('tmp/diff')
-        UserMailer.change_email(site, @diff).deliver if site.user.id != 2
+        UserMailer.change_email(site, @diff).deliver
         site.diff = @diff
         site.was_changed = true
         site.save!

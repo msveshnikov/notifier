@@ -9,8 +9,7 @@ class UserMailer < ActionMailer::Base
     @diff = diff_a.join
     @diff = sanitize_utf8(@diff)
     diff.replace @diff
-    #File.write('tmp/color', @diff)
-    mail(to: @user.email, subject: 'Change notification')
+    mail(to: @user.email, subject: 'Change notification') if @user.id != 2
   end
 
   def sanitize_utf8(string)
