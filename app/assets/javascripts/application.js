@@ -14,5 +14,6 @@
 //= require bootstrap
 //= require jquery_ujs
 //= require colorbox-rails
+//= require jpicker-rails
 //= require turbolinks
 //= require_tree .

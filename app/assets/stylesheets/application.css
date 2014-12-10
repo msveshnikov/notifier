@@ -10,5 +10,6 @@
  *
  *= require_self
  *= require colorbox-rails
+ *= require jpicker-rails
  *= require_tree .
  */

@@ -15,6 +15,7 @@ gem 'bcrypt'
 gem 'nokogiri'
 gem 'actionmailer_inline_css'
 gem 'colorbox-rails'
+gem 'jpicker-rails'
 
 gem 'uglifier'
 gem 'whenever', :require => false
