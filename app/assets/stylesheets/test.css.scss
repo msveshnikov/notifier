@@ -28,7 +28,9 @@ body {
   //  font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
   font-size: 15px;
   font-weight: normal;
-  max-width: 950px;
+  max-width: 965px;
+  margin: 0 auto !important;
+  float: none !important;
 }
 
 table tr td a {
