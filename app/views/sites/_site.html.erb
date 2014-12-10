@@ -1,7 +1,7 @@
 <li>
   <%= link_to site.url, site.url, target: "_blank" %>
   | <%= link_to "Category", category_path(site), data: {:colorbox => true,
-                                                        :colorbox_height => '550px',
+                                                        :colorbox_height => '700px',
                                                         :colorbox_width => '400px'} %>
   | <%= link_to "Delete", site, method: :delete, data: {confirm: "You sure?"} %>
   <%= if site.was_changed
