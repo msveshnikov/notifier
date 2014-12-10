@@ -12,6 +12,7 @@
               m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-33888137-1', 'auto');
+      ga('require', 'displayfeatures');
       ga('send', 'pageview');
   </script>
 
@@ -46,7 +47,9 @@
         <% else %>
             Please sign in to Google+ <br>
             <%= link_to image_tag("signin.png", width: 150), "/auth/google_oauth2", id: "sign_in" %>
-            <br><br><b>iWatcher</b> observes your sites and emails you if change is detected. See example layout below.
+            <br><br><b>iWatcher</b> observes your sites and sends email to you if change is detected. &nbsp See example
+            layout below.
+            <br>
         <% end %>
       </div>
       <div>
