@@ -10,6 +10,21 @@ class CategoriesController < ApplicationController
   def edit
   end
 
+  # GET /categories/new
+  def new
+    @category = Category.new
+    render :edit
+  end
+
+  def create
+    @category = Category.new(category_params)
+    if @category.save
+      redirect_to categories_path
+    else
+      render :edit
+    end
+  end
+
   # PATCH/PUT /categories/1
   def update
     if @category.update(category_params)

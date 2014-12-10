@@ -8,5 +8,5 @@ Notifier::Application.routes.draw do
   root 'sites#index'
 
   resources :sites, except: [:new, :edit]
-  resources :categories, only: [:index, :edit, :update, :show]
+  resources :categories
 end
