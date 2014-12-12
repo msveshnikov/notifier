@@ -10,4 +10,8 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 
   provider :twitter, 'a7RSn2UOgJgg6IRu3wym0VlEa', 'DaAK8zzu2mzDps5snHnJKAx07hDluf9Gx3J5WWC4vpfjOhzlN5',
            {client_options: {ssl: {ca_file: Rails.root.join("cacert.pem").to_s}}}
+
+  provider :vkontakte, '4678038', 'AdoLRYQa2JKag9xgcbjh',
+           {client_options: {ssl: {ca_file: Rails.root.join("cacert.pem").to_s}}}
+
 end
