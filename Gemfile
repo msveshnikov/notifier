@@ -4,6 +4,7 @@ source 'http://rubygems.org'
 gem 'rails', '4.0.2'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 # Use mysql as the database for Active Record
 gem 'sqlite3'

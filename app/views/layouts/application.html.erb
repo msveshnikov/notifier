@@ -31,11 +31,6 @@
 <%= image_tag("topbar.jpg") %>
 
 <div>
-  <!--<aside class="span2 leftbar">-->
-  <!--<section>-->
-  <!--<%= image_tag("leftbar.png") %>-->
-  <!--</section>-->
-  <!--</aside>-->
   <aside class="span8">
     <section>
       <div>
@@ -45,9 +40,10 @@
             Welcome, <%= current_user.name %>!
             <%= link_to "Sign out", signout_path, id: "sign_out" %>
         <% else %>
-            Please sign in to Google+ <br>
+            Please sign in to your social network <br>
             <%= link_to image_tag("signin.png", width: 150), "/auth/google_oauth2", id: "sign_in" %>
             <%= link_to image_tag("facebook.png", width: 150), "/auth/facebook", id: "sign_in" %>
+            <%= link_to image_tag("twitter-logo.png", width: 150), "/auth/twitter", id: "sign_in" %>
             <br><br><b>iWatcher</b> observes your sites and sends email to you if change is detected. &nbsp See example
             layout below.
             <br>
