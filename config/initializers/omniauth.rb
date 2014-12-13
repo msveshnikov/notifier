@@ -12,6 +12,11 @@ Rails.application.config.middleware.use OmniAuth::Builder do
            {client_options: {ssl: {ca_file: Rails.root.join("cacert.pem").to_s}}}
 
   provider :vkontakte, '4678038', 'AdoLRYQa2JKag9xgcbjh',
-           {client_options: {ssl: {ca_file: Rails.root.join("cacert.pem").to_s}}}
-
+           {
+               :scope => 'email',
+               :display => 'popup',
+               :lang => 'en',
+               :image_size => 'original',
+               client_options: {ssl: {ca_file: Rails.root.join("cacert.pem").to_s}}
+           }
 end
