@@ -6,6 +6,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-vkontakte'
+gem 'rails_admin'
 
 # Use mysql as the database for Active Record
 gem 'sqlite3'

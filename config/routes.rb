@@ -8,4 +8,7 @@ Notifier::Application.routes.draw do
 
   resources :sites, except: [:new, :edit]
   resources :categories
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
 end
